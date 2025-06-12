@@ -22,7 +22,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
+      - name: Setup Node.js & install dependencies
         uses: ./.github/workflows/setup-node
 
       - name: Setup Pages ⚙️
@@ -31,12 +31,13 @@ jobs:
           static_site_generator: next
 
       - name: Build with Next.js 🏗️
-        run: npx next build
+        run: yarn build
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          # use whatever folder your build exports to (e.g. docs/ if you set distDir: 'docs')
+          path: ./docs
 
   deploy:
     environment:

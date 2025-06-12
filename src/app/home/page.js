@@ -62,10 +62,11 @@ export default function LandingPage() {
                 <Column md={4} lg={{ span: 8, offset: 8 }} sm={4}>
                   <Image
                     className="landing-page__illo"
-                    src="/tab-illo.png"
+                    src="tab-illo.png"
                     alt="Carbon illustration"
                     width={604}
                     height={498}
+                    unoptimized
                   />
                 </Column>
               </Grid>
